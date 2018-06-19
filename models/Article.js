@@ -6,29 +6,11 @@ var Schema = mongoose.schema;
 
 //Creating the Schema for each article
 var ArticleSchema = new Schema({
-
-	//Title of the  the article
-	title: {
-		type: String,
-		required:true,
-	},
-
-	//Date of the article
-	date: {
-		type: String,
-		required: true,
-	},
-
-	//Link to Article
-	url: {
-		type: String,
-		required: true
-	}
-
+  title: String,
+  date: Date,
+  url: String
 });
 
-//Creating the Article model with Mongoose
-var Article = mongoose.model('Article', ArticleSchema);
+var Article = mongoose.model("Article", articleSchema);
 
-//Export the model
 module.exports = Article;
