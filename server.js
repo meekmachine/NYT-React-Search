@@ -2,8 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Article = require('./models/Article.js');
-var router = require('./controllers/controller.js');
-
+var routes = require('./routes');
+var app = express();
 
 //Deliver static content
 app.use(express.static(process.cwd() + '/public'));
@@ -19,7 +19,8 @@ else{
   mongoose.connect('mongodb://localhost/nytreact');
 }
 var db = mongoose.connection;
-
+// Add routes, both API and view
+app.use(routes);
 // Show any Mongoose errors
 db.on('error', function(err) {
   console.log('Mongoose Error: ', err);
