@@ -17,7 +17,7 @@ const Results = props =>
 						<button className="btn btn-dfeault">View Article</button>
 					</a>
 
-					<button className="btn btn-primary" onclick={() => props.handleSaveButton(props._id)}>
+					<button className="btn btn-primary" onClick={() => props.handleSaveButton(props._id)}>
 					Save
 					</button>
 				</span>

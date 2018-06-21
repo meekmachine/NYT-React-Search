@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Results from "../components/Results";
-import Saved from "../components/Saved";
-import Search from "../components/Search";
+import Results from "../Results/Results";
+import Saved from "../Saved/Saved";
+import Search from "../Search/Search";
 import API from "../utils/api";
 
 class Main extends Component {
@@ -28,7 +28,7 @@ class Main extends Component {
 
     //calls in the result component to render each article recieved in the query
     renderArticles = () => {
-        return this.state.articles.map(article = >(
+        return this.state.articles.map(article =>(
             <Results
                 _id={article._id}
                 key={article._id}
@@ -45,11 +45,11 @@ class Main extends Component {
     renderSaved = () => {
         return this.state.saved.map(save => (
             <Saved
-                _id={article._id}
-                key={article._id}
-                title={article.headline.main}
-                date={article.pub_date}
-                url={article.web_url}
+                _id={save._id}
+                key={save._id}
+                title={save.headline.main}
+                date={save.pub_date}
+                url={save.web_url}
                 handleDeleteButton={this.handleSaveButton}
                 getSavedArticle={this.getSavedArticles}
             />
